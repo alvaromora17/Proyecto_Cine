@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma Pago</title>
+    <!--url para que se vean los iconos-->
+    <!--https://cdnjs.com/libraries/font-awesome/-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/pagina_pago.css">
+
+</head>
+
+<body>
+    <form id="formulario" action="#" method="post">
+
+        <legend>Entradas (8.90€/ud)</legend>
+        <hr width="100%">
+        <label>Cantidad</label><input id='cantidad' type="number" value="1" min='1' max='100' name="cantidad">
+
+        <legend>Tarjeta</legend>
+        <hr width="100%">
+        <label>Titular</label><input id="titular" type="text" pattern="^([A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ]){1,}[A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ][A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*$" name="titular" required>
+        <label>Num.Tarjeta</label><input id="numTarjeta" type="text" maxlength="16" pattern="^[0-9]{16}$" name="numTarjeta" required>
+        <label>CVV</label><input id="cvv" type="text" maxlength="3" pattern="^[0-9]{3}$" name="CVV" required>
+        <label>Fecha.Cad</label><input id="caducidad" type="text" maxlength="5" name="FechaCad" placeholder="mm/yy" pattern="^(0[1-9]|1[0-2])\/[0-9][0-9]$" required>
+        <label id="label">Total</label>
+        <hr width="100%">
+        <p id="total">8.90€</p>
+        <input id="enviar" type="submit" value="ENVIAR">
+
+    </form>
+    <div class="combo">
+        <div id="content">
+            <p>Forma Pago</p>
+        </div>
+        <!--https://fontawesome.com/icons/-->
+        <i id="icono" class="gira fa-regular fa-circle-up fa-2x"></i>
+    </div>
+    <ul class="forma_pago oculto">
+        <li>
+            <i class="fa-brands fa-cc-visa fa-2x" style="color: blue"></i>
+            <p id="visa" style="color: blue">Visa</p>
+        </li>
+        <li>
+            <i class="fa-brands fa-cc-mastercard fa-2x" style="color: orange"></i>
+            <p id="master" style="color: orange">Master Card</p>
+        </li>
+        <li>
+            <i class="fa-brands fa-cc-paypal fa-2x" style="color: blue"></i>
+            <p id="paypal" style="color: blue">PayPal</p>
+        </li>
+        <li>
+            <i class="fa-solid fa-money-bill-transfer fa-2x" style="color:brown"></i>
+            <p id="transfer" style="color: brown">Transferencia Bancaria</p>
+        </li>
+        <li>
+            <i class="fa-solid fa-money-bill-1-wave fa-2x" style="color: green"></i>
+            <p id="cash" style="color: green">Contra Reembolso</p>
+        </li>
+    </ul>
+
+    <script src="javascript/pagina_pago.js"></script>
+</body>

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-family: 'Old Standard TT', serif;
+  /*background: radial-gradient(circle at center top,rgb(10,28,58) 0px,rgb(5,17,34) 900px,rgb(5,17,34));*/
+  background-image: url("Imagenes/carrete.jpg");
+}
+
+.contenedor > h1{
+  position: relative;
+  margin-left: 10%;
+  width: 30%;
+  font-size: 60px;
+} 
+#logo{
+  position: absolute;
+  top: -50px;
+  left: -160px;
+}
+
+.imagen {
+  width: 100%;
+  height: 100vh;
+  background: url("Imagenes/fondo.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+.contenedor {
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carta {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: aliceblue;
+	width: 100%;
+	box-shadow: 0 4px 8px 6px rgb(124, 80, 169);
+	border-radius: 10px;
+	position: relative;
+	margin-bottom: 5%;
+}
+
+#contenedor_portada{
+	width: 20%;
+  padding: 10px;
+}
+.imagen_portada{
+  border-width: 30px 30px 30px 30px;
+  border-style: solid;
+  border-image-source: url("Imagenes/borde.png");
+  border-image-slice: 30 30 50 30;
+  cursor: pointer;
+}
+
+.datos_pelicula{
+	width: 60%;
+  display: flex;
+  flex-flow: column;
+  margin-left: 10%;
+}
+
+.informacion_extra{
+	width: 20%;
+	display: flex;
+	justify-content:left;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+  	font-size: 25px;
+}
+
+.iconos{
+  display: flex;
+  flex-flow: row;
+}
+
+h1 {
+  font-size: 50px;
+  color: rgb(228, 66, 41);
+  -webkit-text-stroke: 1px rgb(83, 82, 82);
+}
+
+
+b{
+  color: rgb(228, 66, 41);
+}
+
+@media (max-width:500px) {
+  .contenedor {
+    padding: 10px;
+  }
+}
+
+.emoji {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 5%;
+}
+
+.emoji2 {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	top: 5%;
+}
+
+.emoji3 {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	top: 5%;
+}
+
+.emoji4 {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	top: 5%;
+}
+
+.far {
+  margin: 1px;
+  /*Lo que nos permite cambiar los emojis*/
+  /*Van de 0 a -250*/
+  transform: translateX(0);
+}
+
+.estrellas {
+  	position: relative;
+	top: 10%;
+}
+
+.estrellas2 {
+	position: relative;
+	top: 10%;
+}
+
+.estrellas3 {
+	position: relative;
+	top: 10%;
+}
+
+
+.estrellas4 {
+	position: relative;
+	top: 10%;
+}
+
+.fa-star {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+.fa-star.active {
+  color: gold;
+}
+
+textarea{
+  height:105px;
+  text-align: justify;
+}

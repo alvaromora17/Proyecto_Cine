@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-image: url("Imagenes/fondo_carga.jpg");
+    background-position: center;
+    background-size: cover;
+    color: rgb(207, 148, 54);
+    font-family: 'Old Standard TT', serif;
+  }
+  .contenedor{
+    text-align: center;
+    width: 400px;
+    position: relative;
+    margin-left: 60%;
+  }
+  .contador{
+    font-size: 40px;
+  }
+  .barraTras{
+    position: absolute;
+    height: 8px;
+    background-color: lightgray;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+  }
+  .barraFront{
+    position: absolute;
+    height: 8px;
+    background-color: red;
+    width: 0%;
+    border-radius: 5px;
+    border: none;
+  }

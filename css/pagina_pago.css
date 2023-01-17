@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 67%;
+    height: 100vh;
+    justify-content: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(Imagenes/fondo_carga.jpg);
+	background-position: center;
+	background-size: cover;
+	
+}
+hr{
+	border: 1px solid black;
+}
+#formulario{
+	display:flex;
+	flex-direction: column;
+	background-color: rgb(252, 252, 228);
+	width: 300px;
+	border: 3px solid rgb(207, 148, 54);
+	padding: 10px;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+input{
+	margin-bottom: 10px;
+}
+#label{
+	text-align: right;
+}
+#total{
+	text-align: right;
+	background-color: azure;
+	border: 1px solid black;
+}
+input[type=submit]{
+	width: 50%;
+	margin-left: 50%;
+}
+.combo{
+    background-color: rgb(252, 252, 228);
+    width: 300px;
+	border: 3px solid rgb(207, 148, 54);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.combo p{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+#content{
+    display: flex;
+}
+
+.forma_pago{
+    background-color: rgb(252, 252, 228);
+    width: 300px;
+    padding: 10px;
+    list-style-type: none;
+	border: 3px solid rgb(207, 148, 54);
+    border-radius: 6px;
+}
+
+.forma_pago li{
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    transition: padding 0.2s linear;
+}
+
+.forma_pago li:hover{
+    background-color: darkgray;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.forma_pago li .fa{
+    margin: 0 10px;
+}
+
+.forma_pago li p{
+    padding-left: 3px;
+}
+
+.forma_pago .fa{
+    transition: transform .2s;
+}
+
+.gira{
+    transform: rotate(180deg);
+}
+
+.oculto{
+    display: none;
+}
