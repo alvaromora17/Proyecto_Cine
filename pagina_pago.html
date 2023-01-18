@@ -29,7 +29,7 @@
         <label>Fecha.Cad</label><input id="caducidad" type="text" maxlength="5" name="FechaCad" placeholder="mm/yy" pattern="^(0[1-9]|1[0-2])\/[0-9][0-9]$" required>
         <label id="label">Total</label>
         <hr width="100%">
-        <p id="total">8.90€</p>
+        <p id="total_tarjeta" class="total">8.90€</p>
         <input id="enviar_tarjeta" type="submit" value="ENVIAR">
 
     </form>
@@ -45,8 +45,32 @@
         <label>Num.Cuenta</label><input id="numero_cuenta" type="text" maxlength="16" pattern="^[0-9]{16}$" name="numero_cuenta" required>
         <label id="label">Total</label>
         <hr width="100%">
-        <p id="total">8.90€</p>
+        <p id="total_bancario" class="total">8.90€</p>
         <input id="enviar_bancario" type="submit" value="ENVIAR">
+    </form>
+
+    <form id="formulario_paypal" class="formulario oculto" action="#" method="post">
+        <legend>Entradas (8.90€/ud)</legend>
+        <hr width="100%">
+        <label>Cantidad</label><input id='cantidad' type="number" value="1" min='1' max='100' name="cantidad">
+
+        <legend>PayPal</legend>
+        <hr width="100%">
+        <p id="total_paypal" class="total">8.90€</p>
+        <input id="enviar_paypal" type="submit" value="Pagar con Paypal">
+    </form>
+
+    <form id="formulario_contra_reembolso" class="formulario oculto" action="#" method="post">
+        <legend>Entradas (8.90€/ud)</legend>
+        <hr width="100%">
+        <label>Cantidad</label><input id='cantidad' type="number" value="1" min='1' max='100' name="cantidad">
+
+        <legend>Contra Reembolso</legend>
+        <hr width="100%">
+        <label>Dirección</label><input id="direccion" type="text" pattern="^([A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ]){1,}[A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ][A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*$" name="direccion" required>
+        <hr width="100%">
+        <p id="total_reembolso" class="total">8.90€</p>
+        <input id="enviar_reembolso" type="submit" value="ENVIAR">
     </form>
 
     <div class="combo">

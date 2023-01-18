@@ -30,7 +30,7 @@ input{
 #label{
 	text-align: right;
 }
-#total{
+.total{
 	text-align: right;
 	background-color: azure;
 	border: 1px solid black;

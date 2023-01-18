@@ -26,7 +26,7 @@ window.onload = function () {
     caducidad.addEventListener('input', function () {
         comprobarCaducidad(this);
     });
-    document.getElementById("enviar").addEventListener('click', validar);
+    document.getElementById("enviar_tarjeta").addEventListener('click', validar);
 }
 function validar(e) {
     if (!cantidad.checkValidity()) {
@@ -105,20 +105,32 @@ function pago(i, p) {
 
 let formulario_tarjeta = document.getElementById('formulario_tarjeta');
 let formulario_bancario = document.getElementById('formulario_bancario');
+let formulario_paypal = document.getElementById('formulario_paypal');
+let formulario_reembolso = document.getElementById('formulario_contra_reembolso');
 
 function borrar_formularios() {
     formulario_tarjeta.classList.remove('oculto');
     formulario_tarjeta.classList.add('oculto');
     formulario_bancario.classList.remove('oculto');
     formulario_bancario.classList.add('oculto');
+    formulario_paypal.classList.remove('oculto');
+    formulario_paypal.classList.add('oculto');
+    formulario_reembolso.classList.remove('oculto');
+    formulario_reembolso.classList.add('oculto');
 }
 function mostrar_formulario(nombre_formulario) {
     if (nombre_formulario == "Visa" || nombre_formulario == "Master Card") {
         borrar_formularios();
-        formulario_tarjeta.classList.toggle('oculto');
+        formulario_tarjeta.classList.remove('oculto');
     } else if (nombre_formulario == "Transferencia Bancaria") {
         borrar_formularios();
         formulario_bancario.classList.remove('oculto');
+    } else if (nombre_formulario == "PayPal") {
+        borrar_formularios();
+        formulario_paypal.classList.remove('oculto');
+    } else if(nombre_formulario == "Contra Reembolso"){
+        borrar_formularios();
+        formulario_reembolso.classList.remove('oculto');
     }
 }
 
@@ -157,7 +169,13 @@ function comprobarCaducidad(input) {
 }
 
 function calcularCantidad(input) {
-    let total = document.getElementById('total');
+    let total_tarjeta = document.getElementById('total_tarjeta');
+    let total_bancario = document.getElementById('total_bancario');
+    let total_paypal = document.getElementById('total_paypal');
+    let total_reembolso = document.getElementById('total_reembolso');
     let resultado = input.value * 8.9;
-    total.innerHTML = resultado.toFixed(2) + '€';
+    total_tarjeta.innerHTML = resultado.toFixed(2) + '€';
+    total_bancario.innerHTML = resultado.toFixed(2) + '€';
+    total_paypal.innerHTML = resultado.toFixed(2) + '€';
+    total_reembolso.innerHTML = resultado.toFixed(2) + '€';
 }
