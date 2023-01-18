@@ -16,8 +16,7 @@
 </head>
 
 <body>
-    <form id="formulario" class="oculto" action="#" method="post">
-
+    <form id="formulario_tarjeta" class="formulario oculto" action="#" method="post">
         <legend>Entradas (8.90€/ud)</legend>
         <hr width="100%">
         <label>Cantidad</label><input id='cantidad' type="number" value="1" min='1' max='100' name="cantidad">
@@ -31,9 +30,25 @@
         <label id="label">Total</label>
         <hr width="100%">
         <p id="total">8.90€</p>
-        <input id="enviar" type="submit" value="ENVIAR">
+        <input id="enviar_tarjeta" type="submit" value="ENVIAR">
 
     </form>
+
+    <form id="formulario_bancario" class="formulario oculto" action="#" method="post">
+        <legend>Entradas (8.90€/ud)</legend>
+        <hr width="100%">
+        <label>Cantidad</label><input id='cantidad' type="number" value="1" min='1' max='100' name="cantidad">
+
+        <legend>Bancario</legend>
+        <hr width="100%">
+        <label>Titular de la Cuenta</label><input id="titular_cuenta" type="text" pattern="^([A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ]){1,}[A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*[ ][A-ZÁÀÉÈÍÓÒÚ][a-záàéèíóòú]*$" name="titular_cuenta" required>
+        <label>Num.Cuenta</label><input id="numero_cuenta" type="text" maxlength="16" pattern="^[0-9]{16}$" name="numero_cuenta" required>
+        <label id="label">Total</label>
+        <hr width="100%">
+        <p id="total">8.90€</p>
+        <input id="enviar_bancario" type="submit" value="ENVIAR">
+    </form>
+
     <div class="combo">
         <div id="content">
             <p>Forma Pago</p>

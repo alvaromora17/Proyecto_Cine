@@ -14,7 +14,7 @@ body{
 hr{
 	border: 1px solid black;
 }
-#formulario{
+.formulario{
 	display:flex;
 	flex-direction: column;
 	background-color: rgb(252, 252, 228);

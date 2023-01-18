@@ -103,8 +103,23 @@ function pago(i, p) {
     mostrar_formulario(div.textContent);
 }
 
-function mostrar_formulario(nombre_formulario){
+let formulario_tarjeta = document.getElementById('formulario_tarjeta');
+let formulario_bancario = document.getElementById('formulario_bancario');
 
+function borrar_formularios() {
+    formulario_tarjeta.classList.remove('oculto');
+    formulario_tarjeta.classList.add('oculto');
+    formulario_bancario.classList.remove('oculto');
+    formulario_bancario.classList.add('oculto');
+}
+function mostrar_formulario(nombre_formulario) {
+    if (nombre_formulario == "Visa" || nombre_formulario == "Master Card") {
+        borrar_formularios();
+        formulario_tarjeta.classList.toggle('oculto');
+    } else if (nombre_formulario == "Transferencia Bancaria") {
+        borrar_formularios();
+        formulario_bancario.classList.remove('oculto');
+    }
 }
 
 function comprobarCVV(input) {
