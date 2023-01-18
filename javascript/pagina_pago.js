@@ -29,6 +29,14 @@ window.onload = function () {
     document.getElementById("enviar_tarjeta").addEventListener('click', validar);
 }
 function validar(e) {
+    document.getElementById("enviar").addEventListener('click', validar);
+};
+
+
+/**
+ * Valida los campos
+ */
+function validar() {
     if (!cantidad.checkValidity()) {
         if (cantidad.value == "") {
             cantidad.setCustomValidity('Debe introducir el numero de entradas que deseas comprar');
@@ -45,50 +53,27 @@ function validar(e) {
             cantidad.setCustomValidity('Debe introducir el numero de entradas que deseas comprar');
         }
     }
-    if (!titular.checkValidity()) {
-        if (titular.validity.valueMissing) {
-            titular.setCustomValidity('Debe introducir el nombre del titular de la tarjeta de credito');
-        } else if (titular.validity.patternMismatch) {
-            titular.setCustomValidity('Error debe introducir el nombre del titular de la tarjeta de credito correctamente');
-        } else {
-            titular.setCustomValidity('');
-        }
-    }
-    if (!numTarg.checkValidity()) {
-        if (numTarg.validity.valueMissing) {
-            numTarg.setCustomValidity('Debe introducir el número de la tarjeta de credito');
-        } else if (numTarg.validity.patternMismatch) {
-            numTarg.setCustomValidity('Error no cumple el formato estipulado para una tarjeta de credito');
-        } else {
-            numTarg.setCustomValidity('');
-        }
-    }
-    if (!cvv.checkValidity()) {
-        if (cvv.validity.valueMissing) {
-            cvv.setCustomValidity('Debe introducir el codigo de seguridad de la tarjeta de credito');
-        } else if (cvv.validity.patternMismatch) {
-            cvv.setCustomValidity('Error no cumple el formato estipulado para el código de seguridad de la tarjeta de credito');
-        } else {
-            cvv.setCustomValidity('');
-        }
-    }
-    if (!caducidad.checkValidity()) {
-        if (caducidad.validity.valueMissing) {
-            caducidad.setCustomValidity('Debe introducir la fecha de caducidad de la tarjeta de credito');
-        } else if (caducidad.validity.patternMismatch) {
-            caducidad.setCustomValidity('Error no cumple el formato estipulado para la fecha de caducidad de la tarjeta de credito');
-        } else {
-            caducidad.setCustomValidity('');
-        }
-    }
+    validarCampo(titular,'Debe introducir el nombre del titular de la tarjeta de credito','Error debe introducir el nombre del titular de la tarjeta de credito correctamente');
+	validarCampo(numTarg,'Debe introducir el número de la tarjeta de credito','Error no cumple el formato estipulado para una tarjeta de credito');
+	validarCampo(cvv,'Debe introducir el codigo de seguridad de la tarjeta de credito','Error no cumple el formato estipulado para el código de seguridad de la tarjeta de credito');
+	validarCampo(caducidad,'Debe introducir la fecha de caducidad de la tarjeta de credito','Error no cumple el formato estipulado para la fecha de caducidad de la tarjeta de credito');
 }
 
+/**
+ * Oculta/Muestra el botón flecha y reproduce la animación de giro Poniendo/Quitando la clase "gira"
+ */
 function botonFlecha() {
     let icon = document.getElementById('icono');
     let ul = document.getElementsByTagName('ul');
     ul[0].classList.toggle('oculto');
     icon.classList.toggle('gira');
 }
+
+/**
+ * Administra el funcionamiento de la combobox de pago
+ * @param {HTMLElement} i 
+ * @param {HTMLElement} p 
+ */
 function pago(i, p) {
     let combo = document.getElementsByClassName('combo');
     let divAntiguo = document.getElementById('content');
@@ -103,11 +88,16 @@ function pago(i, p) {
     mostrar_formulario(div.textContent);
 }
 
+// -- FORMULARIOS --
+
 let formulario_tarjeta = document.getElementById('formulario_tarjeta');
 let formulario_bancario = document.getElementById('formulario_bancario');
 let formulario_paypal = document.getElementById('formulario_paypal');
 let formulario_reembolso = document.getElementById('formulario_contra_reembolso');
 
+/**
+ * Esconde los formularios
+ */
 function borrar_formularios() {
     formulario_tarjeta.classList.remove('oculto');
     formulario_tarjeta.classList.add('oculto');
@@ -134,6 +124,10 @@ function mostrar_formulario(nombre_formulario) {
     }
 }
 
+/**
+ * Verifica la CVV
+ * @param {HTMLElement#Input}} input 
+ */
 function comprobarCVV(input) {
 
     if (!isNaN(input.value)) {
@@ -146,6 +140,11 @@ function comprobarCVV(input) {
         input.style.color = 'red';
     }
 }
+
+/**
+ * Verifica el numero de la tarjeta de credito
+ * @param {HTMLElement#Input}} input 
+ */
 function comprobarNumTarg(input) {
     if (!isNaN(input.value)) {
         if (input.value.length != 16) {
@@ -157,6 +156,11 @@ function comprobarNumTarg(input) {
         input.style.color = 'red';
     }
 }
+
+/**
+ * Verifica la caducidad
+ * @param {HTMLElement#Input}} input 
+ */
 function comprobarCaducidad(input) {
     if (input.value.length < 2) {
         borrado_barra = false;
@@ -168,6 +172,10 @@ function comprobarCaducidad(input) {
     }
 }
 
+/**
+ * Calcula la cantidad
+ * @param {HTMLElement#Input}} input 
+ */
 function calcularCantidad(input) {
     let total_tarjeta = document.getElementById('total_tarjeta');
     let total_bancario = document.getElementById('total_bancario');
@@ -178,4 +186,17 @@ function calcularCantidad(input) {
     total_bancario.innerHTML = resultado.toFixed(2) + '€';
     total_paypal.innerHTML = resultado.toFixed(2) + '€';
     total_reembolso.innerHTML = resultado.toFixed(2) + '€';
+    total.innerHTML = resultado.toFixed(2) + '€';
+}
+
+function validarCampo(dom,emptyMSG = "El campo no puede estar vacío",regexMSG = "El contenido no cumple con la validación asociada al campo"){
+	if (!dom.checkValidity()) {
+        if (dom.validity.valueMissing) {
+            dom.setCustomValidity(emptyMSG);
+        } else if (dom.validity.patternMismatch) {
+            dom.setCustomValidity(regexMSG);
+        } else {
+            dom.setCustomValidity('');
+        }
+    }
 }

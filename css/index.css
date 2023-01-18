@@ -38,14 +38,18 @@ body {
 
 .carta {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 	background-color: aliceblue;
-	width: 100%;
 	box-shadow: 0 4px 8px 6px rgb(124, 80, 169);
-	border-radius: 10px;
 	position: relative;
-	margin-bottom: 5%;
+	margin-bottom: 10px;
+	padding: 1em 1em 3em 1em;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.carta img{
+	height:300px;
+	width: auto;
 }
 
 #contenedor_portada{
@@ -61,20 +65,51 @@ body {
 }
 
 .datos_pelicula{
-	width: 60%;
   display: flex;
   flex-flow: column;
-  margin-left: 10%;
+  padding: 30px;
+}
+
+.datos_pelicula>h1{
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.datos_pelicula blockquote{
+	font-style: italic;
+	background-color:#eee;
+	padding: 2em;
+	line-height: 2em;
+}
+
+.datos_pelicula blockquote::before{
+	content: '"';
+	font-size: x-large;
+	color:gray;
+	margin-left: 2em;
+	margin-right: 0.25em;
+}
+
+.datos_pelicula blockquote::after{
+	content: '"';
+	font-size: x-large;
+	color:gray;
+	margin-left: 0.15em;
 }
 
 .informacion_extra{
-	width: 20%;
 	display: flex;
 	justify-content:left;
 	flex-direction: column;
 	align-items: center;
 	padding: 30px;
   	font-size: 25px;
+	word-break: none; 
+	min-width: 200px;
+}
+
+.informacion_extra p {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .iconos{
