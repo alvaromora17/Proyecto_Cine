@@ -10,10 +10,11 @@ body {
     background-size: cover;
     color: rgb(207, 148, 54);
     font-family: 'Old Standard TT', serif;
+    font-size: 24px;
   }
   .contenedor{
     text-align: center;
-    width: 400px;
+    width: 500px;
     position: relative;
     margin-left: 60%;
   }
@@ -22,7 +23,7 @@ body {
   }
   .barraTras{
     position: absolute;
-    height: 8px;
+    height: 14px;
     background-color: lightgray;
     width: 100%;
     border-radius: 5px;
@@ -30,8 +31,8 @@ body {
   }
   .barraFront{
     position: absolute;
-    height: 8px;
-    background-color: red;
+    height: 14px;
+    background-color: rgb(207, 148, 54);
     width: 0%;
     border-radius: 5px;
     border: none;
