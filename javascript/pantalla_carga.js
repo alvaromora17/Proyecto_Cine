@@ -8,7 +8,7 @@ window.onload = function() {
         if(cont > 100){
             clearInterval(intervalo);
             intervalo = "";
-            //window.location.replace('pagina_pago.html');
+            window.location.replace('pagina_pago.html');
         }
     },25);
 }
