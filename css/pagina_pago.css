@@ -98,5 +98,5 @@ input[type=submit]{
 }
 
 .oculto{
-    display: none;
+    display: none !important;
 }

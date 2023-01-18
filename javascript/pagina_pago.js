@@ -99,7 +99,14 @@ function pago(i, p) {
     div.appendChild(pCopiado);
     div.insertBefore(iCopiado, pCopiado);
     combo[0].replaceChild(div, divAntiguo);
+    console.log(div.textContent);
+    mostrar_formulario(div.textContent);
 }
+
+function mostrar_formulario(nombre_formulario){
+
+}
+
 function comprobarCVV(input) {
 
     if (!isNaN(input.value)) {
